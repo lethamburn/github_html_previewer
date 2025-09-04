@@ -77,7 +77,7 @@ const previewHtml = async () => {
             <!DOCTYPE html>
     <html>
         <head>
-            <meta charset="UTF-8">  // <--- ¡Esta es la línea clave!
+            <meta charset="UTF-8">
             <base href="${baseUrl}">
             ${styleTags}
         </head>
