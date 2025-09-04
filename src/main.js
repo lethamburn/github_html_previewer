@@ -75,16 +75,17 @@ const previewHtml = async () => {
 
         const finalHtml = `
             <!DOCTYPE html>
-            <html>
-                <head>
-                    <base href="${baseUrl}">
-                    ${styleTags}
-                </head>
-                <body>
-                    ${new XMLSerializer().serializeToString(doc)}
-                    ${scriptTags}
-                </body>
-            </html>
+    <html>
+        <head>
+            <meta charset="UTF-8">  // <--- ¡Esta es la línea clave!
+            <base href="${baseUrl}">
+            ${styleTags}
+        </head>
+        <body>
+            ${new XMLSerializer().serializeToString(doc)}
+            ${scriptTags}
+        </body>
+    </html>
         `;
 
         const blobUrl = URL.createObjectURL(new Blob([finalHtml], { type: 'text/html' }));
